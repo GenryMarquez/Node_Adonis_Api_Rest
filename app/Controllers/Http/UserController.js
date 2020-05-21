@@ -6,9 +6,9 @@ class UserController {
 
         return {
             menssage: 'Registro de Usuarios desde el Controlador'
-        }
+        };
 
-    }
+    };
 
 }
 
