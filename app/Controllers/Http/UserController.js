@@ -2,11 +2,11 @@
 const User = use('App/Models/User')
 class UserController {
 
-    store({ request }) {
+    async store({ request }) {
 
         const { email, password } = request.all();
         console.log(email, password);
-        const user = User.create({
+        const user = await User.create({
             email,
             password,
             username: email
