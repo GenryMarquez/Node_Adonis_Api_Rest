@@ -1,13 +1,17 @@
 'use strict'
-
+const User = use('App/Models/User')
 class UserController {
 
-    store() {
+    store({ request }) {
 
-        return {
-            menssage: 'Registro de Usuarios desde el Controlador'
-        };
-
+        const { email, password } = request.all();
+        console.log(email, password);
+        const user = User.create({
+            email,
+            password,
+            username: email
+        });
+        return user;
     };
 
 }
