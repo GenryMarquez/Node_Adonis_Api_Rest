@@ -30,7 +30,7 @@ Route.group(() => {
     Route.post('Users/register', 'UserController.store');
     Route.post('Users/login', 'UserController.login');
     Route.get('Project', 'ProjectController.index').middleware('auth');
-
+    Route.post('Project', 'ProjectController.create').middleware('auth');
 }).prefix('Api/v1');
 
 Route.group(() => {
