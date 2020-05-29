@@ -29,7 +29,7 @@ Route.get('/', () => {
 Route.group(() => {
     Route.post('Users/register', 'UserController.store');
     Route.post('Users/login', 'UserController.login');
-    Route.get('Project', 'ProjectController.index');
+    Route.get('Project', 'ProjectController.index').middleware('auth');
 
 }).prefix('Api/v1');
 
