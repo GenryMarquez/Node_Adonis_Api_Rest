@@ -35,7 +35,10 @@ Route.group(() => {
     Route.delete('Projects/:id', 'ProjectController.destroy').middleware('auth');
     Route.patch('Projects/:id', 'ProjectController.update').middleware('auth');
     // Rutas de las Tareas
+    Route.get('Projects/:id/Tareas', 'TareaController.index').middleware('auth');
     Route.post('Projects/:id/Tareas', 'TareaController.create').middleware('auth');
+    Route.patch('Tareas/:id', 'TareaController.update').middleware('auth');
+    Route.delete('Tareas/:id', 'TareaController.destroy').middleware('auth');
 }).prefix('Api/v1');
 
 Route.group(() => {

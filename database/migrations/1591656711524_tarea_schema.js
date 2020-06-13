@@ -9,6 +9,7 @@ class TareaSchema extends Schema {
             table.increments()
             table.integer('project_id').unsigned().references('id').inTable('projects')
             table.string('description', 255).notNullable()
+            table.boolean('completada').defaultTo(false)
             table.timestamps()
         })
     }
